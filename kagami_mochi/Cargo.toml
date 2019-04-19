@@ -1,0 +1,6 @@
+[package]
+name = "kagami_mochi"
+version = "0.1.0"
+authors = ["yasuoka ryosuke <yasuoka0830@gmail.com>"]
+
+[dependencies]

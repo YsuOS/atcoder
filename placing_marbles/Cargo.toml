@@ -1,0 +1,6 @@
+[package]
+name = "placing_marbles"
+version = "0.1.0"
+authors = ["Ryosuke YASUOKA <yasuoka0830@gmail.com>"]
+
+[dependencies]
