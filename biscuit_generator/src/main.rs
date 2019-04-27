@@ -13,10 +13,12 @@ fn read<T: FromStr>() -> T {
     token.parse().ok().expect("failed to parse token")        
 }
 fn main() {
+
     let a: u32 = read();
     let b: u32 = read();
+    let t: u32 = read();
 
-    let ans = if ( (a * b) % 2 == 0 ) { "Even" } else { "Odd" };
+    let ans = t / a * b;
     println!("{}", ans);
 }
 
