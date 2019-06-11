@@ -1,10 +1,21 @@
+use std::io::*;
+use std::str::FromStr;
+
+fn read<T: FromStr>() -> T {
+    let stdin = stdin();
+    let stdin = stdin.lock();
+    let token: String = stdin
+            .bytes()
+            .map(|c| c.expect("failed to read char") as char)
+            .skip_while(|c| c.is_whitespace())
+            .take_while(|c| !c.is_whitespace())
+            .collect();
+    token.parse().ok().expect("failed to parse token")
+}
+
 fn main() {
-    let mut s = String::new();
-    std::io::stdin().read_line(&mut s).unwrap();
-    let v: Vec<u32> = s.trim().split_whitespace().map(|x| x.parse().unwrap())
-                        .collect();
-    let a = v[0];
-    let b = v[1];
+    let a: u32 = read();
+    let b: u32 = read();
 
     let ans = if ( (a * b) % 2 == 0 ) { "Even" } else { "Odd" };
     println!("{}", ans);
